@@ -36,6 +36,8 @@ services:
         - 27017:27017
   notebook:
     build: .
+    image: image_drio
+    container_name: notebook
     ports:
      - "8888:8888"
     command: ["pipenv", "run", "jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root", "--NotebookApp.token=''"]
